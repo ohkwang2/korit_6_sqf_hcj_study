@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            position: relative;
+            /* 기준이 위쪽, 왼쪽이므로 relative일 경우 부모를 기준으로 left, top 기준으로 옮겨짐 */
+            /* absolute일 경우 어느쪽이든 상관없이 이동 가능 */
+            /* 부모가 static일 경우 그 상위를 기준으로 위치를 잡게 됨 */
+            /* 자식 요소가 부모요소 안에 배치되어야 할 경우 부모 요소를 relative 또는 absolute로 지정해야 함. */
+            left: 100px;
+            box-sizing: border-box;
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .box3 {
+            position: absolute;
+            right: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
