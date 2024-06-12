@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-a {
+            /* display: flex는 부모에게 주어 자식들을 정렬시킴 */
+            display: flex;
+            /* 플렉스 컨텐츠의 배치 방향*/
+            flex-direction: row;    /*기본 값은 row*/
+            /* 플렉스 항목을 주축 방향으로 배치 */
+            justify-content: flex-start;    /*주축 기준 배치에서 좌측 정렬*/
+            justify-content: center;    /*내용물을 주축 기준 중앙 정렬*/
+            justify-content: space-between; /*내용물을 주축 기준 동일 간격으로 배치 (좌우 공간 여백 없음.)*/
+
+            /* 플렉스 항목을 교차축 방향으로 배치 */
+            align-content: space-between;   /*교차축을 기준으로 양 끝에 붙여줌*/
+            align-content: center;          /*교차축 기준으로 중앙 정렬*/
+
+            /* 내용물을 위아래 기준 정렬 (padding도 고려해야 함)*/
+            align-items: center;    /*위아래 똑같은 크기만큼 나눠서 내용물을 위아래 기준 중앙 정렬 (padding 값 고려해야 함)*/
+            align-items: flex-start;    /*위아래 똑같은 크기만큼 나눠서 위에서 아래로 배치*/
+            align-items: flex-end;      /*위아래 똑같은 크기만큼 나눠서 아래에서 위로 배치*/
+            align-items: stretch;       /*위아래 똑같은 크기만큼 나눠서 남은 공간 height를 채워줌 (뒤에 높이가 지정되어 있으면 지정된 높이가 적용됨*/
+            align-items: baseline;      /*위아래 똑같은 크기만큼 나눠서 남은 공간에서 content 공간 최소 높이로 채워줌*/
+            /* 공간이 넘칠경우 처리 방법 */
+            flex-wrap: wrap;    /*공간이 넘치면 다음줄로 보내버리는 기능*/
+            box-sizing: border-box;
+            border: 1px solid black;
+            padding: 20px;
+            width: 500px;
+            height: 300px;
+        }
+
+        .box-b {
+            box-sizing: border-box;
+            border: 1px solid black;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .box-b:nth-of-type(2) {
+            align-self: flex-end;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box-a">
+        <div class="box-b">1</div>
+        <div class="box-b">2</div>
+        <div class="box-b">3</div>
+        <div class="box-b">4</div>
+        <div class="box-b">5</div>
+        <div class="box-b">6</div>
+        <div class="box-b">7</div>
+        <div class="box-b">8</div>
+        <div class="box-b">9</div>
+        <div class="box-b">10</div>
+        <div class="box-b">11</div>
+        <div class="box-b">12</div>
+    </div>
+    
+</body>
+</html>
